@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./font/iconfont.css">
+  <style>
+    /* css reset */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* header start */
+    .header {
+      height: 98px;
+    }
+
+    .header-panel {
+      width: 1130px;
+      height: 98px;
+      margin: 0 auto;
+      /* 实现水平居中 */
+    }
+
+    .header-img {
+      width: 200px;
+      height: 98px;
+      /* background-image: url("https://account.xiaomi.com/static/res/7f6f2f5/account-static/respassport/acc-2014/img/mistore_logo.png");
+      background-repeat: no-repeat; */
+      background: url("https://account.xiaomi.com/static/res/7f6f2f5/account-static/respassport/acc-2014/img/mistore_logo.png") no-repeat;
+    }
+
+    /* header end */
+    .content {
+      position: relative;
+    }
+
+    .content-bg {
+      height: 588px;
+      background-image: url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f838fdcd77715410b441f2f56d8f10cd.jpg");
+      background-position: center center;
+    }
+
+    .login-panel {
+      width: 1130px;
+      height: 588px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -565px;
+    }
+
+    .login-from {
+      height: 525px;
+      width: 410px;
+      background-color: #fff;
+      position: absolute;
+      right: 0;
+      top: 30px;
+    }
+
+    .lf-header {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .lf-header a {
+      text-decoration: none;
+      color: #666;
+      font-size: 24px;
+    }
+
+    .lf-header .active {
+      color: #f56600
+    }
+
+    .lf-header .line {
+      margin: 0 35px 0 42px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .login-area {
+      width: 348px;
+      margin: 0 auto;
+    }
+
+    .inp-bar input {
+      width: 306px;
+      padding: 13px 16px 13px 14px;
+      font-size: 14px;
+      color: #4a4a4a;
+      margin-bottom: 14px;
+      border-color: 1px solid #efefef;
+    }
+
+    .login-area button {
+      font-size: 14px;
+      width: 340px;
+      height: 50px;
+      background-color: #ff6700;
+      border: 0;
+      color: #fff;
+    }
+
+    .text-info {
+      margin-top: 10px;
+    }
+
+    .text-info a,
+    .text-info span {
+      font-size: 14px;
+      color: #757575;
+    }
+
+    .text-info .left {
+      float: left;
+    }
+
+    .text-info .right {
+      float: right;
+    }
+
+    .lf-footer {
+      width: 348px;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      margin-left: -174px;
+    }
+
+    .login-type {
+      color: #bbb;
+      text-align: center;
+      border-top: 1px solid #ddd;
+    }
+
+    .login-type legend {
+      margin: 0 auto;
+    }
+
+    .logo-icon {
+      text-align: center;
+    }
+
+    .a0 {
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      border-radius: 50%;
+      background-color: blue;
+      margin-right: 30px;
+    }
+
+    .a1 {
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      border-radius: 50%;
+      background-color: #0ae;
+      margin-right: 30px;
+    }
+
+    .a2 {
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      border-radius: 50%;
+      background-color: #d32f2f;
+      margin-right: 30px;
+    }
+
+    .a3 {
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      border-radius: 50%;
+      background-color: #00d20d;
+      ;
+      /* margin-right: 30px; */
+    }
+
+    .i1 {
+      display: block;
+      margin-top: 6px;
+      margin-left: 4px;
+      width: 18px;
+      height: 18px;
+      background-image: url("https://account.xiaomi.com/static/res/166d6dc/account-static/respassport/acc-2014/img/icons_type.png");
+      background-position: -19px 0
+    }
+
+    .i2 {
+      display: block;
+      margin-top: 6px;
+      margin-left: 4px;
+      width: 18px;
+      height: 18px;
+      background-image: url("https://account.xiaomi.com/static/res/166d6dc/account-static/respassport/acc-2014/img/icons_type.png");
+      background-position: -38px 0;
+    }
+
+    i {
+      display: block;
+      margin-top: 6px;
+      margin-left: 4px;
+      width: 25px;
+      height: 18px;
+      background-image: url("https://account.xiaomi.com/static/res/166d6dc/account-static/respassport/acc-2014/img/icons_type.png");
+      background-position: -57px 0;
+    }
+
+    fieldset {
+      border-width: 1px 0 0 0;
+      text-align: center;
+    }
+
+    .i3 {
+      display: block;
+      margin-top: 6px;
+      margin-left: 4px;
+      width: 24px;
+      height: 18px;
+      background-image: url("https://account.xiaomi.com/static/res/166d6dc/account-static/respassport/acc-2014/img/icons_type.png");
+      background-position: -83px 0;
+    }
+    .footer{
+      text-align: center;
+      color: #757575;
+      font-size: 14px;
+    }
+    .footer li{
+      display: inline-block;
+    }
+    .footer li a{
+      padding: 0 20px;
+      color: #757575
+    }
+    .footer ul{
+      margin:20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-panel">
+      <div class="header-img"></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content-bg"></div>
+    <div class="login-panel">
+      <div class="login-from">
+        <div class="lf-header">
+          <a class="active" href="javascript:void(0);">账号登录</a>
+          <span class="line"></span>
+          <a href="javascript:void(0);">扫码登录</a>
+        </div>
+        <div class="lf-content">
+          <div class="login-area">
+            <div class="inp-bar">
+              <input type="text" placeholder="邮箱/手机号码/小米ID">
+              <input type="password" placeholder="密码">
+            </div>
+            <button>登录</button>
+            <div class="text-info">
+              <div class="left">
+                <a href="javascript:void(0);">手机短信登录/注册</a>
+              </div>
+              <div class="right">
+                <a href="javascript:void(0);">立即注册</a>
+                <span>|</span>
+                <a href="javascript:void(0);">忘记密码</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lf-footer">
+          <fieldset>
+            <legend>其他登录方式</legend>
+          </fieldset>
+          <div class="logo-icon">
+            <a class="a0" href="javascript:void(0);">
+              <i></i>
+            </a>
+            <!-- <span id="icon-span" style="font-size: 50px;" class="iconfont icon-qq"></span> -->
+            <a class="a1" href="javascript:void(0);">
+              <i class="i1"></i>
+            </a>
+            <a class="a2" href="javascript:void(0);">
+              <i class="i2"></i>
+            </a>
+            <a class="a3" href="javascript:void(0);">
+              <i class="i3"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <li><a href="javascript:void(0);">简体</a>|</li>
+    <li><a href="javascript:void(0);">简体</a>|</li>
+    <li><a href="javascript:void(0);">简体</a>|</li>
+    <li><a href="javascript:void(0);">简体</a>|</li>
+    <li><a href="javascript:void(0);">简体</a></li>
+  </ul>
+  <p>小米公司版权所有-京ICP备10046444-
+      <img src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png">
+    京公网安备11010802020134号-京ICP证110507号</p>
+  </div>
+</body>
+
+</html>

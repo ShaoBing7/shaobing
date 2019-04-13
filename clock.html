@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .div1 {
+            width: 502px;
+            height: 502px;
+            border: 1px dashed #666;
+            margin: 100px auto;
+        }
+        .div2 {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border: 1.5px solid #666;
+            border-radius: 50% 50%;
+        }
+
+        .li1 {
+            list-style: none;
+            position: absolute;
+            width: 3px;
+            height: 15px;
+            background-color: #666;
+            left: 50%;
+            top: 0;
+        }
+        .li2{
+            list-style: none;
+            position: absolute;
+            width: 3px;
+            height: 8px;
+            background-color: #666;
+            left: 50%;
+            top:0;
+            transform: rotate(6deg);
+            transform-origin:50% 250px;
+        }
+        .li3{
+            list-style: none;
+            position: absolute;
+            width: 3px;
+            height: 8px;
+            background-color: #666;
+            left: 50%;
+            top:0;
+            transform: rotate(12deg);
+            transform-origin:50% 250px;
+        }
+        .li4{
+            list-style: none;
+            position: absolute;
+            width: 3px;
+            height: 8px;
+            background-color: #666;
+            left: 50%;
+            top:0;
+            transform: rotate(18deg);
+            transform-origin:50% 250px;
+        }
+        .li5{
+            list-style: none;
+            position: absolute;
+            width: 3px;
+            height: 8px;
+            background-color: #666;
+            left: 50%;
+            top:0;
+            transform: rotate(24deg);
+            transform-origin:50% 250px;
+        }
+        .hour{
+            position: absolute;
+            width: 16px;
+            height: 75px;
+            background-color: red;
+            left: 50%;
+            top:50%;
+            transform: rotate(180deg);
+            transform-origin:50% 0px;
+            animation-name: hour;
+      animation-duration: 43200s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+        }
+        
+        .minute{
+            position: absolute;
+            width: 13px;
+            height: 90px;
+            background-color:blue;
+            left: 50%;
+            top:50%;
+            transform: rotate(180deg);
+            transform-origin:50% 0px;
+            animation-name: minute;
+      animation-duration: 3600s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+        }
+        .second{
+            position: absolute;
+            width: 8px;
+            height: 120px;
+            background-color:green;
+            left: 50%;
+            top:50%;
+            transform: rotate(180deg);
+            transform-origin:top;
+            animation-name: second;
+      animation-duration: 60s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+        }
+        @keyframes second{
+            0%{
+        transform: rotate(180deg)
+      }
+      100%{
+        transform: rotate(540deg)
+      }
+    }
+    @keyframes minute{
+            0%{
+        transform: rotate(180deg)
+      }
+      100%{
+        transform: rotate(540deg)
+      }
+    }
+    @keyframes hour{
+            0%{
+        transform: rotate(180deg)
+      }
+      100%{
+        transform: rotate(540deg)
+      }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <div class="div2">
+            <ul>
+                <li class="li1"></li>
+                <li class="li2"></li>
+                <li class="li3"></li>
+                <li class="li4"></li>
+                <li class="li5"></li>
+                <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
