@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    img{
+        width: 300px;
+        height: 200px;
+    }
+    .parent{
+        position: relative;
+        transform-style: preserve-3d;
+        width: 400px;
+        margin: 100px auto;
+        border: 10px solid white;
+    }
+    .div1,.div2{
+        transition: all 1s ease;
+      position:absolute;
+    }
+    .div1{ 
+          transform: rotate(45deg);
+    }
+    .div2{
+        transform: rotate(-45deg);
+     
+    }
+    .div1:hover{
+      transform: rotate(0deg) scale(2);
+      width: 400px; 
+      z-index: 10;
+    }
+    .div2:hover{
+      transform: rotate(0deg) scale(2);
+      width: 400px; 
+  
+    }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="div1">
+            <img class="img1" src="http://pic29.nipic.com/20130601/12122227_123051482000_2.jpg" alt="">
+        </div>
+        <div class="div2">
+            <img class="img2" src="http://pic18.nipic.com/20111213/8791344_093424951000_2.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

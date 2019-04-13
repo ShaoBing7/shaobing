@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var people=[];
+        var islunch=window.confirm("是否吃午餐");
+        if(islunch){
+            var num = window.prompt("请输入人数");
+            for(var i=0;i<num;i++){
+var who=   window.prompt("第"+(i+1)+"个人叫什么","");
+people.push(who)
+            }
+            for(var j=0;j<num;j++){
+                var name="";
+                var random =Math.random();
+                random*=10;
+                random =Math.floor(random);
+                switch(random){
+                    case 0:name = "宫保鸡丁";break;
+                    case 1:name = "汤";break;
+                    case 2:name = "饭";break;
+                    case 3:name = "串";break;
+                    case 4:name = "面";break;
+                    case 5:name = "鱼香肉丝";break;
+                    case 6:name = "香辣肉丝";break;
+                    case 7:name = "鱿鱼";break;
+                    case 8:name = "水饺";break;
+                }
+                alert(people[j]+"吃"+name)
+            }
+        }else{
+            alert("不吃");
+        }
+    </script>
+</body>
+</html>
