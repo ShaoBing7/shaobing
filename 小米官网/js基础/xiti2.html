@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var str ="平年";
+        var today = new Date(); //获取当天日期
+        var year = today.getFullYear(); //获取当天年份
+        if (year % 4 == 0 && year % 100 != 0) {
+            console.log("闰年");
+        } else if (year % 400 == 0) {
+            console.log("闰年");
+        }else{
+            console.log("平年");
+        }
+    </script>
+</body>
+
+</html>

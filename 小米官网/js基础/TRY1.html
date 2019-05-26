@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num;
+        var str;
+        // 儿童：年龄＜14；青少年：14<=年龄＜24；青年：24<年龄＜40; 中年：40＜=年龄＜60; 老年：年龄>=60
+        var num = window.prompt("years old");
+        if (num < 14) {
+            alert("儿童");
+        }  else if (14 <= num&&num < 24) {
+            alert("青少年");
+        } else if (24 < num&&num < 40) {
+            alert("青年");
+        }
+        else if (40<= num&&num< 60) {
+            alert("中年")
+        }
+         else {
+            alert("老年")
+        }
+    </script>
+</body>
+
+</html>
