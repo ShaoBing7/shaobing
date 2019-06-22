@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .img1,.smallimg,.bigimg {
+            width: 200px;
+            height: 200px;
+        }
+        .smallimg,.bigimg {
+            float: left;
+        }
+        .bigimg {
+            overflow: hidden;
+            position: relative;
+        }
+        .img2 {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+        }
+        .box {
+            background-color: rgba(255, 255, 0, .5);
+            width: 100px;
+            height: 100px;
+            position: absolute;
+           top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="smallimg">
+        <img class="img1" src="http://pic18.nipic.com/20111213/8791344_093424951000_2.jpg" alt="">
+        <div class="box"></div>
+    </div>
+    <div class="bigimg">
+        <img class="img2" src="http://pic18.nipic.com/20111213/8791344_093424951000_2.jpg" alt="">
+    </div>
+    <script>
+        var obox = document.getElementsByClassName("box")[0];
+        var aImg = document.getElementsByClassName("img1")[0];
+        var oImg = document.getElementsByClassName("img2")[0];
+        aImg.onmousemove = function (e) {
+            var thisLeft = e.clientX - 50;
+            var thisTop = e.clientY - 50;
+            obox.offsetLeft
+            if (thisLeft < 0) {
+                thisLeft = 0;
+            }
+            if (thisTop < 0) {
+                thisTop = 0;
+            }
+            if (thisLeft > 100) {
+                thisLeft = 100;
+            }
+            if (thisTop > 100) {
+                thisTop = 100;
+            }
+            obox.style.top = thisTop + "px";
+            obox.style.left = thisLeft + "px";
+            oImg.style.left = -2 * thisLeft + "px";
+            oImg.style.top = -2 * thisTop + "px";
+        }
+    </script>
+</body>
+
+</html>

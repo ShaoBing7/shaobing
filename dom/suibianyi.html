@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .square {
+            height: 200px;
+            width: 200px;
+            background-color: tomato;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square"></div>
+</body>
+<script>
+var oSquare = document.getElementsByClassName("square")[0];
+oSquare.onmousedown = function(e){
+    var thisLeft = e.clientX-this.offsetLeft;
+    var thisTop = e.clientY-this.offsetTop;
+document.onmousemove = function(e){
+   oSquare.style.top = e.clientY-thisTop+"px";
+     oSquare.style.left = e.clientX-thisLeft+"px";
+}
+}
+oSquare.onmouseup = function(){
+    document.onmousemove = null;
+}
+</script>
+</html>
