@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #bg1{
+        height: 400px;
+        width: 200px;
+        text-align: center;
+        font-size: 20px;
+    }
+    #bg2{
+        height: 400px;
+        width: 200px;
+        text-align: center;
+        font-size: 20px;
+    }
+    </style>
+</head>
+
+
+<body>
+    <select multiple name="" id="bg1">
+        <option value="a">a1</option>
+        <option value="b">a2</option>
+        <option value="c">a3</option>
+        <option value="d">a4</option>
+        <option value="e">a5</option>
+        <option value="f">a6</option>
+    </select>
+    <select multiple name="" id="bg2">
+            <option value="b">b1</option>
+    </select>
+    <button id="x1">选中右移</button>
+    <button id="x2">选中左移</button>
+    <button id="x3">全部右移</button>
+    <button id="x4">全部左移</button>
+    <script>
+    var oBg1 = document.getElementById("bg1");
+    var oBg2 = document.getElementById("bg2");
+    var nOption = document.createElement("option")
+        var aX1 = document.getElementById("x1")
+        var aX2 = document.getElementById("x2")
+        var aX3 = document.getElementById("x3")
+        var aX4 = document.getElementById("x4")
+        oBg1.ondblclick = function(){
+            oBg2.appendChild(oBg1.options[oBg1.selectedIndex])
+            // oBg1.options.remove(oBg1.selectedIndex)
+}
+oBg2.ondblclick = function(){
+            oBg1.appendChild(oBg2.options[oBg2.selectedIndex])
+            // oBg2.options.remove(oBg2.selectedIndex)
+}
+        aX1.onclick = function(){
+            var temArr = [];
+      for(var i=0;i<oBg1.options.length;i++){
+        if(oBg1.options[i].selected){
+          temArr.push(oBg1.options[i])
+        }
+      }
+      for(var j=0;j<temArr.length;j++){
+        oBg2.appendChild(temArr[j])
+      }
+    }
+    aX2.onclick = function(){
+        var temArr = [];
+      for(var i=0;i<oBg2.options.length;i++){
+        if(oBg2.options[i].selected){
+          temArr.push(oBg2.options[i])
+        }
+      }
+      for(var j=0;j<temArr.length;j++){
+        oBg1.appendChild(temArr[j])
+      }
+}
+aX3.onclick = function(){
+oBg2.innerHTML =oBg2.innerHTML+oBg1.innerHTML
+    oBg1.options.length = 0;
+}
+aX4.onclick = function(){
+    oBg1.innerHTML =oBg1.innerHTML+oBg2.innerHTML
+    oBg2.options.length = 0;
+}
+    </script>
+</body>
+
+</html>

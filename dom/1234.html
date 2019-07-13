@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="jsq">
+        <li>1</li>
+     
+    </ul>
+    <button id="add">add</button>
+    <script>
+    var oUl=document.getElementsByClassName("jsq")[0];
+    var oAdd=document.getElementById("add")
+    oAdd.onclick=function(){
+        var oLi = document.createElement("li")
+        var lastEl = oUl.lastElementChild.innerText;
+        oLi.innerText = parseInt(lastEl)+1;
+        oUl.appendChild(oLi)
+    }
+    </script>
+</body>
+</html>
