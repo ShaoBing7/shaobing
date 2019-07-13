@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    .box {
+        overflow: hidden;
+      width: 490px;
+      height: 170px;
+      border: 5px solid #fff;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .img-bar ul {
+      width: 4900px;
+      position: absolute;
+      
+    }
+
+    .img-bar li {
+      float: left;
+    }
+
+    .img-bar .active {
+      display: block
+    }
+
+    .right-btn {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+img {
+    width: 490px;
+    height: 200px;
+}
+</style>
+</head>
+<body>
+    <div class="box">
+        <div class="img-bar">
+            <ul id="img-ul" class="clearfix">
+                <li class="active"><img src="http://pic25.nipic.com/20121124/3961114_020908597000_2.jpg" alt=""></li>
+                <li><img src="http://pic41.nipic.com/20140503/18641501_163403406121_2.png" alt=""></li>
+                <li><img src="http://photocdn.sohu.com/20120128/Img333056814.jpg" alt=""></li>
+                <li><img src="http://pic41.nipic.com/20140508/18609517_112216473140_2.jpg" alt=""></li>
+                <li><img src="http://pic22.nipic.com/20120726/10387189_020114544000_2.jpg" alt=""></li>
+                <li><img src="http://pic25.nipic.com/20121124/3961114_020908597000_2.jpg" alt=""></li>
+                <li><img src="http://pic41.nipic.com/20140503/18641501_163403406121_2.png" alt=""></li>
+                <li><img src="http://photocdn.sohu.com/20120128/Img333056814.jpg" alt=""></li>
+                <li><img src="http://pic41.nipic.com/20140508/18609517_112216473140_2.jpg" alt=""></li>
+                <li><img src="http://pic22.nipic.com/20120726/10387189_020114544000_2.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+      var oBox = document.getElementsByClassName("box")[0];
+    var aImg = document.getElementsByClassName("img-bar")[0].getElementsByTagName("li");
+    var oImgUl = document.getElementById("img-ul");
+    var timer = null;
+    var nowIndex = 0;
+    var dir = 1;
+    var isRun = true;
+    var timer2 = null;
+    for (var i = 0; i < aImg.length; i++) {
+      index = i;
+    }
+
+    function move(){
+        timer = setInterval(function () {
+          if (oImgUl.offsetLeft==-2450) {
+            oImgUl.style.left = 0;
+          } else {
+            oImgUl.style.left = oImgUl.offsetLeft - 10 * dir + "px";
+          }
+        }, 16)
+    }
+    move();
+    </script>
+</body>
+
+</html>
