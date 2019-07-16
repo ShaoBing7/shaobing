@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.js"></script>
+    <style>
+        thead td {
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div>筛选：
+        <input type="text" id="inp"></div>
+    <table>
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>年龄</td>
+            </tr>
+        </thead>
+        <tr>
+            <td>b</td>
+            <td>女</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>c</td>
+            <td>女</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>d</td>
+            <td>女</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>女</td>
+            <td>5</td>
+        </tr>
+
+    </table>
+    <script>
+        $("#inp").on("keyup", function () {
+            var thisVal=$(this).val()
+            $("tr").css("display","none")
+            $("tr:contains("+thisVal+")").css("display","block");
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.js"></script>
+    <style>
+    .active{
+       display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>年龄</td>
+            </tr>
+        </thead>
+    </table>
+    <table>
+        <div class="peo1">
+            一号
+            <tr class="ple1">
+                <td>b</td>
+                <td>女</td>
+                <td>2</td>
+            </tr>
+        </div>
+    </table>
+    <table>
+        <div class="peo2">
+            二号
+            <tr class="ple2">
+                <td>c</td>
+                <td>女</td>
+                <td>3</td>
+            </tr>
+            <tr class="ple2">
+                <td>d</td>
+                <td>女</td>
+                <td>4</td>
+            </tr>
+        </div>
+    </table>
+    <table>
+        <div class="peo3">
+            三号
+            <tr class="ple3">
+                <td>e</td>
+                <td>女</td>
+                <td>5</td>
+            </tr>
+        </div>
+    </table>
+    <script>
+    $(".peo1").on("click",function(){
+      $(".ple1").toggleClass("active");
+    })
+    $(".peo2").on("click",function(){
+      $(".ple2").toggleClass("active");
+    })
+    $(".peo3").on("click",function(){
+      $(".ple3").toggleClass("active");
+    })
+    </script>
+</body>
+
+</html>
