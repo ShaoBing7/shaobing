@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.js"></script>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black
+        }
+
+        .tou {
+            text-align: center;
+            background-color: gray;
+        }
+
+        thead {
+            text-align: center;
+        }
+
+        td {
+            font: normal 12px/17px;
+            padding: 2px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="2">鼠标点击即可编辑</td>
+
+
+            </tr>
+        </thead>
+        <tr class="tou">
+            <td>学号</td>
+            <td>姓名</td>
+
+        </tr>
+        <tbody>
+            <tr>
+                <td>c</td>
+                <td class="editable">女</td>
+
+            </tr>
+            <tr>
+                <td>d</td>
+                <td class="editable">女</td>
+
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        $(".editable").on("click", function () {
+            if ($(this).children().length == 0) {
+                var thisVal = $(this).text();
+                var newInp = $("<input type='text'>");
+                newInp.val(thisVal);
+                $(this).text("")
+                $(this).append(newInp);
+                newInp.focus();
+            }
+        })
+        $(".editable").focusout(function () {
+            var inpVal = $(this).find("input").val();
+            $(this).empty();
+            $(this).text(inpVal);
+        })
+        $(".editable").on("keydown", function (e) {
+            if (e.which == 13) {
+                $(this).trigger("focusout");
+            }
+        })
+    </script>
+</body>
+
+</html>
