@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="msg" placeholder="请输入用户名">用户名：{{msg}}
+        <br />
+        <input v-model="hobbyArr" type="checkbox" name="hobby" value="1">篮球
+        <input v-model="hobbyArr" type="checkbox" name="hobby" value="2">2球
+        <input v-model="hobbyArr" type="checkbox" name="hobby" value="3">3球
+        <input v-model="hobbyArr" type="checkbox" name="hobby" value="4">4球
+        我的爱好：{{hobbyArr}}
+        <br />
+        <input v-model="sexData" type="radio" name="sex" value="nan">男
+        <input v-model="sexData" type="radio" name="sex" value="nv">女
+        性别：{{sexData}}
+        <br />
+        <select name="" id="" v-model="school">
+            <option value="农大">农</option>
+            <option value="农大">农</option>
+            <option value="农大">农</option>
+        </select>
+        xuexiao:{{school}}
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                msg: "",
+                hobbyArr: [],
+                sexData: "",
+                school: "",
+            }
+        })
+    </script>
+</body>
+
+</html>
