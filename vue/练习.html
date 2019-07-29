@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="./js/vue.js"></script>
+    <style>
+    .active
+    {
+        background-color: brown;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" placeholder="搜索" v-model="searchText"><button @click="search">搜索</button>
+        <br />
+        <input type="text" v-model="newname" placeholder="名称">
+        <input type="text" v-model="newprice" placeholder="0"><button @click="add">添加</button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>选择</th>
+                    <th>商品名称</th>
+                    <th>商品价格</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+                    <tr :class="{active:item.isSelected}" v-for="(item,index) in productList"  @click="checkLine(index)">
+                        <td><input    type="checkbox"  name="check" :value="item.id" v-model="addd"></td>
+                        <td> {{item.name}}</td>
+                        <td> {{item.price}}</td>
+                        <td><button  type="button" value="删除" @click.stop="disone(item.id)" >删除</button></td>
+                    </tr>
+
+                
+            </tbody>
+        </table>
+        <button @click.stop="disallclick">删除选中</button>
+        <div>价格：</div>
+        <div>{{sum}}</div>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                nowid:5,
+                newname: "",
+                newprice:"",
+                searchText: "",
+                productList: [{
+                    id: "1",
+                    name: '衣服',
+                    price: 123,
+                    isSelected: false,
+                }, {
+                    id: "2",
+                    name: '裤子',
+                    price: 456,
+                    isSelected: false,
+                }, {
+                    id: "3",
+                    name: '鞋',
+                    price: 444,
+                    isSelected: false,
+                }],
+            },
+            methods: {
+                checkLine(index){
+                    console.log(index)
+                    this.productList[index].isSelected = !this.productList[index].isSelected;
+                },
+                add(){
+                    console.log(this.newname,this.newprice);
+                    this.productList.push({
+                        name:this.newname,
+                        price:this.newprice,
+                        isSelected:false,
+                        id:this.nowid++
+                    })
+
+                    
+                },
+                search(){
+                    let thisText = this.searchText;
+                    let newArr = this.productList.filter(function(item,index){
+                            if(item.name.includes(thisText)){
+                                return item;
+                            }
+                    })
+                    this.productList = newArr
+                },
+                disone(id){
+                    let newArr = [];
+                    newArr = this.productList.filter(function(item){
+                        if(item.id!=id){
+                            return item;
+                        }
+                    })
+                    this.productList = newArr
+                },
+                disallclick(){
+                    let newArr=[]
+                    newArr = this.productList.filter(function(item){
+                        if(!item.isSelected){
+                            return item;
+                        }
+                    })
+                    this.productList = newArr;
+                }
+            },
+            computed:{
+                    addd(){
+                        let arr = [];
+                        this.productList.map(function(item,index){
+                            if(item.isSelected){
+                                arr.push(item.id)
+                            }
+                        }
+                        )
+                        return arr
+                    },
+                    sum(){
+                        let sum = 0;
+                        this.productList.map(function(item,index){
+                            if(item.isSelected){
+                                sum+=parseInt(item.price)
+                            }
+                        })
+                        return sum;
+                    }
+                },
+
+        })
+    </script>
+</body>
+
+</html>
