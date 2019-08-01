@@ -19,7 +19,12 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      alias:"/aboutme",
+      beforeEnter: (to, from, next) => {
+        console.log(to,from);
+        next(true);
+      }
     },
     {
       path:'/connect',
@@ -27,16 +32,27 @@ export default new Router({
       component:() => import('./views/Connect.vue'),
       children:[
         {
-          path:'/connect/test1',
+          path:'/connect/test1/:username/:userage',
           name:'test1',
           component:() => import('./views/Test1.vue'),
         },
         {
-          path:'/connect/test2',
+          path:'/connect/test2/:username/:userage',
           name:'test2',
           component:() => import('./views/Test2.vue'),
+        },
+        {
+          path:"/connect/gotest2/:username/:userage",
+          redirect:"/connect/test2/:username/:userage"
         }
       ]
+    },
+    {
+      path:"/mine",
+      redirect:"/"
+    },{
+      path:"*",
+      component:() => import('./views/Error404.vue')
     }
   ]
 })
