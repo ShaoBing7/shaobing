@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+        <table class="table">
+        <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">待办事项</th>
+                  <th scope="col">时间</th>
+                  <th scope="col">预计用时</th>
+                  <th scope="col">操作/th>
+                </tr>
+              </thead>
+            </table>
+        <div id="root"></div>
+        <script type="text/babel">
+     class Foo extends table.Component{
+         constructor(props){
+             super(props){
+                 this.state={
+                    dataList:[
+          {
+              id:0,
+              isActive:false,
+              info:"上课",
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:1,
+              isActive:false,
+              info:'吃饭',
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:2,
+              isActive:false,
+              info:'午休',
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:3,
+              isActive:false,
+              info:'篮球',
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:4,
+              isActive:false,
+              info:'聚会',
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:5,
+              isActive:false,
+              info:'上课',
+              count:2,
+              time:'2018-09-14'
+            }
+          ]
+                 }
+             }
+             render(){
+                 let str = this.state.dataList.map((item,index)=>{
+                    console.log(item,index)
+                    return(
+                        <tr>
+                            <td>{item.id}</td>
+                            <td>{item.info}</td>
+                            <td>{item.time}</td>
+                            <td>{item.count}</td>
+                            <td>{item.isActive}</td>
+                        </tr>
+                    )
+                 })
+                 return(
+                     <table>
+                       {str}
+                        </table>
+                 )
+             }
+         }
+     }
+        </script>
+</body>
+</html>
