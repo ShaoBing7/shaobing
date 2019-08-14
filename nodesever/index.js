@@ -29,7 +29,9 @@ cloud.init({
 
 
 let user = require('./controller/user.js');
+let student = require('./controller/student.js');
 router.use('/user', user.routes());
+router.use('/student',student.routes());
 
 //使用router
 app.use(router.routes());
