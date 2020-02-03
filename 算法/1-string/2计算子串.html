@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let str ="00110011"
+    function fn(str){
+        let i = str.match(/^(0+|1+)/g)[0];
+        let j = (i[0]^1).toString().repeat(i.length);
+        let reg =new RegExp(`^\(${i}${j})`);
+        if(reg.test(str)){
+            return RegExp.$1;
+        }else{
+            return"";
+        }
+    }
+    function counBinarySubstrings(s){
+        let res = [];
+        for(let i=0;i<s.length-1;i++){
+            let r = fn(s.slice(i));//截取从i往后的字符串
+            if (r!=""){
+                res.push(r);
+            }
+        }
+        return res.length;
+
+    }
+    console.log( counBinarySubstrings(str));
+      
+    
+</script>
+</html>

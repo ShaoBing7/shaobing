@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    let str = "let's take leetcode contest";
+    function reverseWords(s){
+        let arr = s.split(" "); //转化为数组
+        let res = arr.map((item)=>{
+            return item.split("").reverse().join("");
+        });
+        return res.join(" ");
+    }
+    console.log(reverseWords(str));
+</script>
+</html>

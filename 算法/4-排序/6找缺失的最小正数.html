@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var firstMissingPositive = function(nums){
+            let r = nums.filter(item => item>0);//筛选正整数
+            for(let i=0;i<r.length;i++){
+                let min = i;
+                for(let j=i;j<r.length;j++){
+                    if(r[j]<r[min]){
+                        min = j;
+                    }
+                }
+                if(i != min){
+                    [r[i],r[min]]=[r[min],r[i]];
+                }
+                if(i + 1 != r[i]){
+                    return i+1;}
+                    else{
+                        return r.length+1;
+                    }
+            }
+        };
+        console.log(firstMissingPositive([1,2,0]));
+    </script>
+</body>
+</html>

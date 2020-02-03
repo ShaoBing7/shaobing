@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let input = [1,2,3,4,4,3,2,1]
+        function fn(a,b){
+            if(b==0){
+                return a;
+            }
+            else{
+                return fn(b,a%b);
+            }
+        }
+        function hasGroupsSizeX(arr){
+            var str = arr.sort((a,b)=>a-b).join("");//11223344
+            var a = str.match(/(\d)\1+|\d/g);
+            while (a.length>1){
+                let i = a.shift().length;//shift()返回数组第一个元素的值 并将其从数组中删除
+                let j = a.shift().length;
+                let k = fn(i,j);
+                a.unshift("0".repeat(k));
+            }
+            return a[0].length>1?true:false; 
+        }
+        console.log(hasGroupsSizeX(input));
+    </script>
+</body>
+</html>
