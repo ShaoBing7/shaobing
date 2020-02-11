@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var lemonadeChange = function(bills){
+            let box = [];//零钱库
+            while(bills.length>0){
+                let money = bills.shift();
+                if (money===5){
+                    box.push(money);
+                }else{
+                    let change = money - 5;
+                    box.sort((a,b)=>b-a);
+                    for(let i=0;i<bills.length;i++){
+                        if(change>box[i]){
+                            box.splice(i,1);
+                            i--;
+                            if(change===0){
+                                box.push(money);
+                                break;
+                            }
+                        }
+                    }
+                    if(change != 0){
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        console.log(lemonadeChange([10,10]));
+    </script>
+</body>
+</html>
