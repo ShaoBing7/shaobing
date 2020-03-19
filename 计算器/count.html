@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        border: 0;
+        padding: 0;
+        list-style: none;
+    }
+.clearfix::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+#displayer{
+    width:100%;
+    height:12rem;
+}
+.mc,.mjia,.mjian,.mr{
+    float: right;
+    height: 5rem;
+    width: 25%;
+    text-align: center;
+    line-height: 5rem;;
+}
+.mc,.mjia,.mjian,.mr,.clear,.chu,.cheng,.delete,.reduce,.add,.get{
+    background-color: chartreuse;
+    text-align: center;
+}
+.clear,.chu,.cheng,.delete{
+    float: left;
+    height: 5rem;
+    width: 25%;
+    line-height: 5rem;
+}
+#right{
+    float: right;
+    height: 20rem;
+    width: 25%;
+}
+.reduce,.add{
+    height: 5rem;
+    line-height: 5rem;;
+}
+.get{
+    height: 10rem;
+    line-height: 10rem;
+}
+.left{
+    float: left;
+    height: 20rem;
+    width: 75%;
+    background-color:wheat;;
+}
+.row-left li {
+      float: left;
+      width: 33.3%;
+      height: 5rem;
+      text-align: center;
+      position: relative;
+      line-height: 5rem;
+      display: block;
+    }
+    .inp1{
+        width:100%;
+        height: 12rem;
+        text-align:right;
+        font-size: 200%;
+    }
+</style>
+<body>
+    <header id="displayer">
+        <input class="inp1" type="text" value="" name="xianshi"/>
+
+    </header>
+    <div id="m">
+        <div class="mc">平方</div>
+        <div class="mjia">立方</div>
+        <div class="mjian">倒数</div>
+        <div class="mr">Π</div>
+    </div>
+    <div id="symbol">
+        <div class="clear">C</div>
+        <div class="chu">/</div>
+        <div class="cheng">×</div>
+        <div class="delete">删除</div>
+    </div>
+    <div id="right">
+    <div class="reduce">-</div>
+    <div class="add">+</div>
+    <div class="get">=</div>
+    </div>
+    <footer class="left">
+    <div class="row-left">
+        <ul>
+          <li class="reveal">1</li>
+          <li class="reveal">2</li>
+          <li class="reveal">3</li>
+          <li class="reveal">4</li>
+          <li class="reveal">5</li>
+          <li class="reveal">6</li>
+          <li class="reveal">7</li>
+          <li class="reveal">8</li>
+          <li class="reveal">9</li>
+          <li class="hundred">%</li>
+          <li class="zero">0</li>
+          <li class="dot">.</li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+        var oReveal = document.getElementsByClassName("reveal");
+        var oInput = document.getElementsByClassName("input");
+        var INPUT = [];
+        var oHun = document.getElementsByClassName("hundred")[0]
+        var oZero = document.getElementsByClassName("zero")[0];
+        var oDot = document.getElementsByClassName("dot")[0];
+        var oClear = document.getElementsByClassName("clear")[0];
+        var oDelete = document.getElementsByClassName("delete")[0];
+        var oMr = document.getElementsByClassName("mr")[0];
+        var oMjian = document.getElementsByClassName("mjian")[0];
+        var oMjia = document.getElementsByClassName("mjia")[0];
+        var oMc = document.getElementsByClassName("mc")[0];
+        var oInp = document.getElementsByClassName("inp1")[0];
+        for(let i=0;i<oReveal.length;i++){
+            oReveal[i].onclick =function display(innerHTML){
+            INPUT += oReveal[i].innerHTML;
+            oInput.innerHTML = INPUT;
+            console.log(INPUT);
+        }
+        }
+        oHun.onclick = function display(innerHTML){
+            INPUT = INPUT/100;
+            console.log(INPUT);
+        }
+        oZero.onclick = function  display(){
+            INPUT = INPUT*10;
+            console.log(INPUT);
+        }
+        oDot.onclick = function  display(){
+            INPUT += oDot.innerHTML;
+        }
+        oClear.onclick = function  display(){
+            INPUT = 0;
+            console.log(INPUT);
+            INPUT = [];
+        }
+        oDelete.onclick = function (){
+                if(INPUT%1 == 0){
+                    INPUT = INPUT/10;
+                    INPUT  =  Math.floor(INPUT);
+                    console.log(INPUT);
+                    INPUT = String(INPUT);
+                }
+                else{
+                    let a = INPUT.split(".");
+                    let x=a[0];
+                    let y=a[1];
+                    y = y/10;
+                    y =  Math.floor(y);
+                    INPUT = x+'.'+y;
+                    console.log(INPUT);
+                    INPUT = String(INPUT);
+                }
+            }
+            
+        oMjian.onclick = function(){
+            INPUT = 1/INPUT;
+            console.log(INPUT);
+        }
+        oMjia.onclick = function(){
+            INPUT = INPUT*INPUT*INPUT;
+            console.log(INPUT);
+        }
+        oMc.onclick = function(){
+            INPUT = INPUT*INPUT;
+            console.log(INPUT);
+        }
+        oMr.onclick = function(){
+            INPUT = 3.14*INPUT;
+            console.log(INPUT);
+        }
+         function display(num){
+                osp.innerHTML=osp.innerHTML+num;
+            }
+    </script>
+</body>
+</html>

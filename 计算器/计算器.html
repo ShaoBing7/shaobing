@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>计算器</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #result{
+        display: inline-block;
+                width: 480px;
+                height: 100px;
+                background-color: white;
+                text-align: right;
+                border-radius: 0;
+                /* 圆角边框 */
+                line-height: 100px;
+                color: red;
+                background-color: gray;
+    }
+    span{
+                display: inline-block;
+                width: 100px;
+                height: 100px;
+                background-color: greenyellow;
+                border-radius: 10px;
+                text-align: center;
+                line-height: 100px;
+                margin: 5px 10px;
+            }
+    div{
+            width: 500px;
+            height: 700px;
+            background-color:whitesmoke;
+    }
+    #deng{
+        display: inline-block;
+                width: 225px;
+                height: 100px;
+                background-color: greenyellow;
+                border-radius: 100px;
+                text-align: center;
+                line-height: 100px;
+    }
+</style>
+<body>
+	<div id="">
+        <span id="result"></span><br />
+        <span onclick="delAll()">C</span>
+        <span onclick="del()">D</span>
+        <span onclick="display('%')">%</span>
+        <span onclick="display('/')">/</span>
+        <span onclick="display(7)">7</span>
+        <span onclick="display(8)">8</span>
+        <span onclick="display(9)">9</span>
+        <span onclick="display('*')">*</span>
+        <span onclick="display(4)">4</span>
+        <span onclick="display(5)">5</span>
+        <span onclick="display(6)">6</span>
+        <span onclick="display('-')">-</span>
+        <span onclick="display(1)">1</span>
+        <span onclick="display(2)">2</span>
+        <span onclick="display(3)">3</span>
+        <span onclick="display('+')">+</span>
+        <span onclick="display(0)">0</span>
+        <span onclick="display('.')">.</span>
+        <span id="deng" onclick="cal()">=</span>
+    </div>
+    <script>
+        var oRes = document.getElementById("result");
+
+        function display(num){
+                oRes.innerHTML=oRes.innerHTML+num;
+            }
+            function cal(){
+                oRes.innerHTML=eval(oRes.innerHTML);
+            }
+            function delAll(){
+                oRes.innerHTML="";
+            }
+            function del(){
+                oRes.innerHTML = oRes.innerHTML.slice(0,oRes.innerHTML.length-1);
+            }
+    </script>
+</body>
+</html>

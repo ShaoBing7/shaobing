@@ -17,7 +17,7 @@
     <div class="fadecontent">
 <transition name="fade">
     <router-view/>
-    <router-view name=""view1/>
+    <router-view name="view1"/>
     </transition>
   </div>
   </div>
