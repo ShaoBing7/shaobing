@@ -2,7 +2,7 @@ const Koa = require('koa');
 const app = new Koa();
 const cors = require('koa2-cors');
 const Router = require('koa-router');
-const koaBody = require('koa-body')
+const koaBody = require('koa-body');
 const cloud = require('tcb-admin-node');
 //初始化路由
 const router = new Router({
@@ -37,5 +37,6 @@ router.use('/store',store.routes());
 app.use(router.routes());
 
 //创建监听 端口号
-app.listen(3000);
-console.log("server runing")
+app.listen(3000, () => {
+    console.log("server runing")
+});

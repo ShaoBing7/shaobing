@@ -5,7 +5,7 @@
       <span class="el-dropdown-link">
         <el-checkbox v-model="checked" />
 
-        11<i class="el-icon-arrow-down el-icon--right" />
+        <i class="el-icon-arrow-down el-icon--right" />
       </span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item>黄金糕</el-dropdown-item>
@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     getOptions() {
-      axios.get('http://localhost:3000/fellow/')
+      axios.get('http://localhost:3000/fellow/store/add')
         .then((res) => {
           // 请求返回的数据
           console.log(res)
